@@ -1,6 +1,6 @@
 {
   "name": "@console-one/multimap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Minimal Map<K, V[]> and Map<K, Set<V>> collections with merge, combine, and fromList constructors.",
   "repository": {
     "type": "git",

@@ -1,2 +1,2 @@
-export { ListMultimap } from './list'
-export { SetMultimap } from './set'
+export { ListMultimap } from './list.js'
+export { SetMultimap } from './set.js'
