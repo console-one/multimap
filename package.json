@@ -2,6 +2,14 @@
   "name": "@console-one/multimap",
   "version": "0.1.0",
   "description": "Minimal Map<K, V[]> and Map<K, Set<V>> collections with merge, combine, and fromList constructors.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/console-one/multimap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/console-one/multimap/issues"
+  },
+  "homepage": "https://github.com/console-one/multimap#readme",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,8 +21,8 @@
   },
   "files": [
     "dist",
-    "src",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc",
@@ -23,9 +31,13 @@
     "test:watch": "vitest",
     "prepublishOnly": "npm run clean && npm run build && npm test"
   },
-  "keywords": ["multimap", "collections", "map"],
-  "license": "UNLICENSED",
-  "private": true,
+  "keywords": [
+    "multimap",
+    "collections",
+    "map"
+  ],
+  "author": "Andrew Chalmers",
+  "license": "MIT",
   "devDependencies": {
     "typescript": "^5.4.0",
     "vitest": "^1.6.0",
