@@ -1,8 +1,10 @@
 # @console-one/multimap
 
-Minimal multimap collections: `ListMultimap<K, V>` and `SetMultimap<K, V>`. No dependencies.
+Minimal multimap collections: `ListMultimap<K, V>`, `SetMultimap<K, V>`, and `HeapMultimap<K, V>`.
 
-A multimap is a map where each key holds a collection of values rather than a single value. `ListMultimap` uses an array per key (preserves insertion order, allows duplicates). `SetMultimap` uses a `Set` per key (deduplicates, unordered).
+A multimap is a map where each key holds a collection of values rather than a single value. `ListMultimap` uses an array per key (preserves insertion order, allows duplicates). `SetMultimap` uses a `Set` per key (deduplicates, unordered). `HeapMultimap` uses a `Heap` per key (priority-queue access per bucket, ordered by the comparator you supply).
+
+`ListMultimap` / `SetMultimap` have no dependencies. `HeapMultimap` depends on `heap-js`.
 
 ## Install
 
@@ -24,6 +26,13 @@ subscribers.get('user.created')  // [onCreate, logCreate]
 const tags = new SetMultimap<string, string>()
 tags.set('post-1', 'typescript').set('post-1', 'typescript')
 tags.count('post-1')  // 1 (deduped)
+
+// HeapMultimap — priority queue per key
+import { HeapMultimap } from '@console-one/multimap'
+const asc = (a: number, b: number) => a - b
+const jobs = new HeapMultimap<string, number>(asc)
+jobs.set('low-priority', 5).set('low-priority', 1).set('low-priority', 3)
+jobs.get('low-priority').peek()  // 1 (min heap)
 ```
 
 ## API
